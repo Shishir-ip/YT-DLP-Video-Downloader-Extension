@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { box-sizing: border-box; }
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      max-width: 520px; 
+      margin: 40px auto; 
+      padding: 24px; 
+      background: #121212; 
+      color: #e0e0e0; 
+    }
+    h1 { 
+      font-size: 22px; 
+      color: #ff4757; 
+      margin-bottom: 24px; 
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    label { 
+      display: block; 
+      margin-bottom: 6px; 
+      font-size: 13px; 
+      color: #aaa; 
+      font-weight: 600;
+    }
+    input, select { 
+      width: 100%; 
+      padding: 10px; 
+      margin-bottom: 18px; 
+      background: #1e1e1e; 
+      border: 1px solid #444; 
+      color: #e0e0e0; 
+      border-radius: 5px; 
+      font-size: 13px;
+    }
+    input:focus, select:focus {
+      border-color: #ff4757;
+      outline: none;
+    }
+    button { 
+      padding: 10px 22px; 
+      background: #ff4757; 
+      color: white; 
+      border: none; 
+      border-radius: 5px; 
+      cursor: pointer; 
+      font-weight: 700; 
+      font-size: 13px;
+    }
+    button:hover { background: #e03e4d; }
+    .saved { 
+      color: #4caf50; 
+      margin-left: 10px; 
+      display: none; 
+      font-weight: 600;
+      font-size: 13px;
+    }
+    .note { 
+      font-size: 12px; 
+      color: #777; 
+      margin-top: -14px; 
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+    .section {
+      background: #1e1e1e;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #333;
+    }
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ff4757;
+      margin-bottom: 12px;
+      margin-top: 0;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #333;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>&#9881; Advanced Settings</h1>
+
+  <div class="section">
+    <div class="section-title">Download Location</div>
+    <label for="download-dir">Save Directory</label>
+    <input type="text" id="download-dir" placeholder="C:\Users\YourName\Downloads">
+    <div class="note">Default is your Windows Downloads folder. You can paste any full path here (e.g., <code>D:\Videos</code>).</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Default Format</div>
+    <label for="default-format">Preferred Quality</label>
+    <select id="default-format">
+      <option value="best">Best Quality (Recommended)</option>
+      <option value="1080p">1080p</option>
+      <option value="720p">720p</option>
+      <option value="mp3">Audio Only (MP3)</option>
+    </select>
+    <div class="note">This format will be pre-selected every time you open the extension popup.</div>
+  </div>
+
+  <div style="display:flex; align-items:center;">
+    <button id="save-btn">Save Settings</button>
+    <span class="saved" id="saved-msg">&#10003; Saved!</span>
+  </div>
+
+  <hr>
+
+  <div class="note" style="text-align:center; color:#666;">
+    YT-DLP Extension v1.0 - Server must be running for settings to sync.
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

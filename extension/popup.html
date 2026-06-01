@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { box-sizing: border-box; }
+    body { 
+      width: 340px; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      margin: 0; 
+      padding: 14px; 
+      background: #121212; 
+      color: #e0e0e0; 
+    }
+    .header { 
+      font-size: 15px; 
+      font-weight: 700; 
+      margin-bottom: 10px; 
+      color: #ff4757; 
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .url-box { 
+      background: #1e1e1e; 
+      padding: 8px; 
+      border-radius: 6px; 
+      font-size: 11px; 
+      color: #888; 
+      margin-bottom: 12px; 
+      word-break: break-all; 
+      max-height: 48px; 
+      overflow-y: auto;
+      border: 1px solid #333;
+    }
+    select, button { 
+      width: 100%; 
+      padding: 9px; 
+      margin-bottom: 10px; 
+      border: none; 
+      border-radius: 5px; 
+      font-size: 12px; 
+      outline: none;
+    }
+    select {
+      background: #1e1e1e;
+      color: #e0e0e0;
+      border: 1px solid #444;
+      cursor: pointer;
+    }
+    button { 
+      background: #ff4757; 
+      color: white; 
+      font-weight: 700; 
+      cursor: pointer; 
+      transition: background 0.2s;
+    }
+    button:hover { background: #e03e4d; }
+    button:disabled { 
+      background: #444; 
+      cursor: not-allowed; 
+      color: #999;
+    }
+    .progress-container { 
+      margin-top: 6px; 
+      background: #1e1e1e;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #333;
+    }
+    .progress-bar { 
+      width: 100%; 
+      height: 8px; 
+      background: #333; 
+      border-radius: 4px; 
+      overflow: hidden; 
+      margin-bottom: 6px;
+    }
+    .progress-fill { 
+      height: 100%; 
+      background: #ff4757; 
+      width: 0%; 
+      transition: width 0.3s ease; 
+      border-radius: 4px;
+    }
+    .status { 
+      font-size: 11px; 
+      color: #aaa; 
+      text-align: center; 
+      font-family: Consolas, monospace;
+    }
+    .settings-link { 
+      font-size: 11px; 
+      color: #ff4757; 
+      text-decoration: none; 
+      display: block; 
+      text-align: center; 
+      margin-top: 10px; 
+      padding-top: 8px;
+      border-top: 1px solid #333;
+    }
+    .settings-link:hover { text-decoration: underline; }
+    .server-offline {
+      background: #2a1a1a;
+      border: 1px solid #ff4757;
+      color: #ff4757;
+      padding: 8px;
+      border-radius: 5px;
+      font-size: 11px;
+      text-align: center;
+      margin-bottom: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">&#11015; YT-DLP Downloader</div>
+
+  <div class="server-offline" id="server-offline">
+    &#9888; Server offline. Run <b>Start_Server.bat</b> first.
+  </div>
+
+  <div class="url-box" id="url">Detecting page...</div>
+
+  <select id="format">
+    <option value="best">Best Quality</option>
+    <option value="1080p">1080p</option>
+    <option value="720p">720p</option>
+    <option value="mp3">Audio Only (MP3)</option>
+  </select>
+
+  <button id="download-btn">Download Video</button>
+
+  <div class="progress-container">
+    <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+    <div class="status" id="status">Ready - click Download to start</div>
+  </div>
+
+  <a href="#" class="settings-link" id="settings-link">&#9881; Advanced Settings</a>
+
+  <script src="popup.js"></script>
+</body>
+</html>
