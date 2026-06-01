@@ -130,27 +130,27 @@ Double-click: Start_Background.bat
 
 ```
 YT-DLP-Video-Downloader/
-&#9500;&#9472;&#9472; extension/          # Browser extension (Chrome/Edge/Brave)
-&#9474;   &#9500;&#9472;&#9472; manifest.json     # Extension manifest (Manifest V3)
-&#9474;   &#9500;&#9472;&#9472; popup.html        # Download UI with progress bar
-&#9474;   &#9500;&#9472;&#9472; popup.js          # URL detection + server communication
-&#9474;   &#9500;&#9472;&#9472; options.html      # Advanced Settings page
-&#9474;   &#9500;&#9472;&#9472; options.js        # Settings save/load logic
-&#9474;   &#9500;&#9472;&#9472; background.js     # Service worker
-&#9474;   &#9492;&#9472;&#9472; icon48.png        # Extension icon
-&#9500;&#9472;&#9472; backend/            # Python server
-&#9474;   &#9500;&#9472;&#9472; yt-dlp-bridge.py  # Flask server, runs yt-dlp in background
-&#9474;   &#9492;&#9472;&#9472; requirements.txt  # Flask dependencies
-&#9500;&#9472;&#9472; screenshots/        # Screenshots for README
-&#9500;&#9472;&#9472; Start_Server.bat        # Manual start (visible window, most reliable)
-&#9500;&#9472;&#9472; Start_Background.bat    # Silent background start
-&#9500;&#9472;&#9472; Add_to_Startup.bat      # Auto-start on Windows login (RECOMMENDED)
-&#9500;&#9472;&#9472; Remove_from_Startup.bat # Remove auto-start
-&#9500;&#9472;&#9472; Stop_Server.bat         # Stop running server
-&#9500;&#9472;&#9472; Check_Server.bat        # Diagnose connection issues
-&#9500;&#9472;&#9472; Test_Server.html        # Browser connectivity test
-&#9500;&#9472;&#9472; README.md               # This file
-&#9492;&#9472;&#9472; LICENSE                 # MIT License
+├── extension/              # Browser extension (Chrome/Edge/Brave)
+│   ├── manifest.json       # Extension manifest (Manifest V3)
+│   ├── popup.html            # Download UI with progress bar
+│   ├── popup.js              # URL detection + server communication
+│   ├── options.html          # Advanced Settings page
+│   ├── options.js            # Settings save/load logic
+│   ├── background.js         # Service worker
+│   └── icon48.png            # Extension icon
+├── backend/                # Python server
+│   ├── yt-dlp-bridge.py      # Flask server, runs yt-dlp in background
+│   └── requirements.txt      # Flask dependencies
+├── screenshots/            # Screenshots for README
+├── Start_Server.bat            # Manual start (visible window, most reliable)
+├── Start_Background.bat        # Silent background start
+├── Add_to_Startup.bat          # Auto-start on Windows login (RECOMMENDED)
+├── Remove_from_Startup.bat     # Remove auto-start
+├── Stop_Server.bat             # Stop running server
+├── Check_Server.bat            # Diagnose connection issues
+├── Test_Server.html            # Browser connectivity test
+├── README.md                   # This file
+└── LICENSE                     # MIT License
 ```
 
 ## Supported Websites
