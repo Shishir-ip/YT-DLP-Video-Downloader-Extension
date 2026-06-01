@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>YT-DLP Server Test</title>
+<style>
+body { font-family: 'Segoe UI', sans-serif; max-width: 500px; margin: 40px auto; padding: 20px; background: #121212; color: #e0e0e0; }
+button { padding: 12px 24px; background: #ff4757; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; }
+.result { margin-top: 20px; padding: 15px; background: #1e1e1e; border-radius: 6px; font-family: Consolas, monospace; font-size: 13px; white-space: pre-wrap; }
+.ok { color: #4caf50; }
+.fail { color: #ff4757; }
+</style>
+</head>
+<body>
+<h2>&#129514; YT-DLP Server Test</h2>
+<p>This page tests if the local server is reachable from your browser.</p>
+<button onclick="testServer()">Test Connection</button>
+<div class="result" id="result">Click the button to test...</div>
+
+<script>
+async function testServer() {
+    const result = document.getElementById('result');
+    result.textContent = 'Testing...';
+
+    try {
+        const r = await fetch('http://127.0.0.1:8765/health', { 
+            method: 'GET',
+            mode: 'cors'
+        });
+        const data = await r.json();
+        result.innerHTML = '<span class="ok">&#10003; SERVER IS RUNNING!</span>
+
+' + JSON.stringify(data, null, 2) + '
+
+The extension should work now.';
+    } catch (e) {
+        result.innerHTML = '<span class="fail">&#10007; SERVER NOT REACHABLE</span>
+
+Error: ' + e.message + '
+
+Fixes:
+1. Run Start_Server.bat (keep window open)
+2. Or run Start_Background.bat
+3. Check Windows Firewall is not blocking localhost';
+    }
+}
+</script>
+</body>
+</html>
